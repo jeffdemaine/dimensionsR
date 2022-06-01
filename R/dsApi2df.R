@@ -80,7 +80,7 @@ pub2df <- function(P, format){
   ### Data Conversion
   
   df <- data.frame(AU=rep(NA,n), AF="NA",TI="NA", SO="NA", SO_LIST=NA, LA="English", DT=NA,DE=NA,ID=NA,AB="NA",C1=NA,RP=NA,OI=NA,FU=NA,CR=NA,
-                   ALT=NA, TC=NA, TCR=NA,PU=NA,SN=NA, J9=NA, JI=NA, PY=NA, VL=NA, IS=NA, DI=NA, PG=NA, SC=NA, OA=NA, URL=NA, DB="DIMENSIONS",
+                   ALT=NA, TC=NA, TCR=NA,PU=NA,SN=NA, J9=NA, JI=NA, PY=NA, VL=NA, IS=NA, DI=NA, PG=NA, SC=NA, SDG=NA, OA=NA, URL=NA, DB="DIMENSIONS",
                    AU_UN=NA, AU1_UN=NA, AU_CO=NA, AU1_CO=NA, SR_FULL=NA,  stringsAsFactors = FALSE)
   
   pb <- utils::txtProgressBar(min = 1, max = n, initial = 1, char = "=")
@@ -147,7 +147,7 @@ pub2df <- function(P, format){
       ## Trying to convert SDG sub-list from Dimensions results:
       ## SDG categories
       SDG_cat <- which(items == "category_sdg.name"
-      df$SD[i] <- trimws(gsub('[[:digit:]]+', '', paste(a[SDG_cat, collapse =";")))
+      df$SDG[i] <- trimws(gsub('[[:digit:]]+', '', paste(a[SDG_cat, collapse =";")))
       
       ## Keywords
       ID_ind <- which(regexpr("concepts",items)>-1)
