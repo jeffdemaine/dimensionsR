@@ -144,6 +144,10 @@ pub2df <- function(P, format){
       SC_ind <- which(items == "category_for.name")
       df$SC[i] <- trimws(gsub('[[:digit:]]+', '', paste(a[SC_ind], collapse =";")))
       
+      ## Trying to convert SDG sub-list from Dimensions results:
+      ## SDG categories
+      SDG_cat <- which(items == "category_sdg.name"
+      df$SD[i] <- trimws(gsub('[[:digit:]]+', '', paste(a[SDG_cat, collapse =";")))
       
       ## Keywords
       ID_ind <- which(regexpr("concepts",items)>-1)
